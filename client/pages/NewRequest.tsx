@@ -62,14 +62,14 @@ export default function NewRequest() {
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
   const [calculatedPriority, setCalculatedPriority] =
     useState<RequestPriority>("low");
-  const [priorityExplanation, setPriorityExplanation] = useState<string>("");
+  //const [priorityExplanation, setPriorityExplanation] = useState<string>("");
 
   // Recalculate priority when impact analysis changes
   useEffect(() => {
     const newPriority = calculatePriority(formData.impactAnalysis);
     const explanation = getPriorityExplanation(formData.impactAnalysis);
     setCalculatedPriority(newPriority);
-    setPriorityExplanation(explanation);
+    //setPriorityExplanation(explanation);
   }, [formData.impactAnalysis]);
 
   const handleInputChange = (field: string, value: any) => {
@@ -592,28 +592,15 @@ export default function NewRequest() {
               </Select>
             </div>
 
-            <div className="p-4 bg-accent/10 rounded-lg">
+            {/* <div className="p-4 bg-accent/10 rounded-lg">
               <div className="flex items-center justify-between mb-2">
-                <Label className="text-sm font-medium">
-                  System Calculated Priority
-                </Label>
-                <Badge
-                  variant="outline"
-                  className={
-                    calculatedPriority === "high"
-                      ? "bg-destructive/20 text-destructive"
-                      : calculatedPriority === "medium"
-                        ? "bg-accent/30 text-accent-foreground"
-                        : "bg-primary/15 text-primary"
-                  }
-                >
-                  {calculatedPriority.toUpperCase()}
-                </Badge>
+                
+                
               </div>
               <p className="text-xs text-muted-foreground">
                 {priorityExplanation}
               </p>
-            </div>
+            </div> */}
           </CardContent>
         </Card>
 
